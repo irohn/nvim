@@ -4,8 +4,21 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      -- servers
-      lspconfig.lua_ls.setup({
+      local lsp_handler = function(server_name, lspconfig_name, server_opts)
+        lspconfig_name = lspconfig_name or server_name
+        server_opts = server_opts or {}
+        local exit_code = vim.system({"which", server_name}):wait()["code"]
+        if exit_code == 0 then
+          lspconfig[lspconfig_name].setup(server_opts)
+        else
+          print(server_name .. "not found.")
+          vim.health.warn(server_name .. "not found",
+            {"Try installing " .. server_name .. " with your package manager."},
+            {"Make sure " .. server_name .. "is in PATH."})
+        end
+      end
+
+      lsp_handler("lua-language-server", "lua_ls", {
         settings = {
           Lua = {
             completion = {
