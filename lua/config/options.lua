@@ -33,6 +33,7 @@ opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 opt.colorcolumn = "0" -- disable color colum
+opt.fillchars = { eob = " " } -- remove the "~" char from end of buffer
 
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
