@@ -3,6 +3,8 @@
     Add Mason support for non NixOS systems
 --]]
 
+
+local mason_enabled
 if vim.g.osinfo.id == "nixos" then
   mason_enabled = false
 else
