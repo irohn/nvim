@@ -1,5 +1,5 @@
 -- Operating system
-if vim.fn.has("linux") then
+if vim.fn.has("linux") == 1 then
   local get_os_value = function(regex)
     return string.gsub(vim.system({
       "grep",
@@ -16,12 +16,12 @@ if vim.fn.has("linux") then
     version = get_os_value("VERSION_ID"),
     codename = get_os_value("VERSION_CODENAME"),
   }
-elseif vim.fn.has("mac") then
+elseif vim.fn.has("mac") == 1 then
   local get_os_value = function(opt)
     return string.gsub(vim.system({
       "sw_vers",
       "-" .. opt,
-    }), "%s+", "")
+    }):wait()["stdout"], "%s+", "")
   end
   vim.g.osinfo = {
     type = "darwin",
@@ -31,7 +31,7 @@ elseif vim.fn.has("mac") then
     version = get_os_value("productVersion"),
     codename = get_os_value("productVersion"),
   }
-elseif vim.fn.has("win32") then
+elseif vim.fn.has("win32") == 1 then
   vim.g.osinfo = {
     type = "windows",
     id = "windows",
