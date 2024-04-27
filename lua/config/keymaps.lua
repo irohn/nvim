@@ -63,3 +63,9 @@ map("n", "<leader>|", function()
   vim_opt_toggle("colorcolumn", "80", "0")
 end, { desc = "Toggle color column" })
 
+-- dev
+map("n", "<leader>x", function()
+  vim.cmd("w")
+  vim.cmd("source %")
+end, { desc = "Source current file" })
+
