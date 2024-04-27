@@ -5,12 +5,6 @@ return {
 
   { "EdenEast/nightfox.nvim" } ,
 
-  { "xiyaowong/transparent.nvim", config = function()
-    vim.keymap.set("n", "<leader>tr", function()
-      vim.cmd("TransparentToggle")
-    end, { desc = "toggle background transparency" })
-  end},
-
   {
     "NvChad/nvim-colorizer.lua",
     config = function()
