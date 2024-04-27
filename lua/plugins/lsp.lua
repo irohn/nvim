@@ -1,6 +1,6 @@
 --[[
   TODO:
-    Add Mason support for non NixOS systems
+    Make nixos use the global servers / tools list
 --]]
 
 
