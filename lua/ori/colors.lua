@@ -1,6 +1,5 @@
-local colors = require("theme.colors")
-local colorscheme = colors.colorscheme.name
-local fallback_colorscheme = colors.colorscheme.fallback
+local colorscheme = "carbonfox"
+local fallback_colorscheme = "lunaperche"
 
 local status, _ = pcall(vim.cmd.colorscheme, colorscheme)
 if not status then
@@ -10,4 +9,3 @@ if not status then
         fallback_colorscheme)
   vim.cmd.colorscheme(fallback_colorscheme)
 end
-

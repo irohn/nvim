@@ -35,3 +35,7 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
   end,
 })
 
+vim.api.nvim_create_user_command("MarksClear", function()
+  vim.cmd("delm! | delm A-Z0-9 | wshada!")
+  print("Marks cleared.")
+end, { desc = "Clear all marks" })
