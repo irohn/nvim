@@ -1,6 +1,9 @@
 local M = {}
 
-M.colorscheme = "rose-pine"
+M.colorscheme = {
+  name = "carbonfox",
+  fallback = "lunaperche",
+}
 
 return M
 
