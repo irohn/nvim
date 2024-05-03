@@ -1,5 +1,7 @@
+local colorschemes = {
+  "EdenEast/nightfox.nvim",
+}
+
 return {
-  {
-    "EdenEast/nightfox.nvim",
-  },
+  colorschemes,
 }
