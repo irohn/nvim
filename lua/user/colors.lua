@@ -1,5 +1,6 @@
 local colorscheme = "carbonfox"
-local fallback_colorscheme = "retrobox"
+local fallback_colorscheme = "wildcharm"
+local transparent = true
 
 local status, _ = pcall(vim.cmd.colorscheme, colorscheme)
 if not status then
@@ -8,6 +9,17 @@ if not status then
         " falling back to " ..
         fallback_colorscheme)
   vim.cmd.colorscheme(fallback_colorscheme)
-  vim.cmd("hi Normal guibg=NONE ctermbg=NONE") -- remove background
 end
+
+local transparent_highlight_groups = {
+  "Normal",
+  "EndOfBuffer",
+}
+
+if (transparent) then
+  for _, hi in pairs(transparent_highlight_groups) do
+    vim.cmd("hi " .. hi .. " guibg=NONE ctermbg=NONE")
+  end
+end
+
 
