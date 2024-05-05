@@ -1,4 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("ori")
+require("user")
+require("package-manager.lazy")
+
