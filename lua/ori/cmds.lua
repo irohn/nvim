@@ -1,6 +1,6 @@
--- prepend "irohn_" to group names to avoid conflicts
+-- prepend name to group to avoid conflicts with plugins
 local function augroup(name)
-  return vim.api.nvim_create_augroup("irohn_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("ori_" .. name, { clear = true })
 end
 
 -- Highlight on yank
@@ -39,3 +39,4 @@ vim.api.nvim_create_user_command("MarksClear", function()
   vim.cmd("delm! | delm A-Z0-9 | wshada!")
   print("Marks cleared.")
 end, { desc = "Clear all marks" })
+

@@ -1,6 +1,5 @@
-local option_toggle = function(option, on_value, off_value)
+local toggle = function(option, on_value, off_value)
   local opt_value
-
   if type(vim.opt[option]:get()) == "table" then
     opt_value = vim.opt[option]:get()[1]
   else
@@ -17,23 +16,25 @@ local option_toggle = function(option, on_value, off_value)
   print(message)
 end
 
--- better indent / dedent
+
+-- stay in visual mode after indent / dedent
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
--- terminal mappings
+-- terminal
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { desc = "copy normal c-w" })
-
--- toggle options
-vim.keymap.set("n", "<leader>|", function()
-  option_toggle("colorcolumn", "80", "0")
-end, { desc = "Toggle color column" })
-
-vim.keymap.set("n", "<leader>#", function()
-  option_toggle("number", true, false)
-  option_toggle("relativenumber", true, false)
-end, { desc = "Toggle numbers" })
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { desc = "Exit terminal mode and insert C-w" })
 
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+-- toggle options
+vim.keymap.set("n", "<leader>|", function()
+  toggle("colorcolumn", "80", "0")
+end, { desc = "Toggle color column" })
+
+vim.keymap.set("n", "<leader>#", function()
+  toggle("number", true, false)
+  toggle("relativenumber", true, false)
+end, { desc = "Toggle numbers" })
+

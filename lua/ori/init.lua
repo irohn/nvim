@@ -1,5 +1,6 @@
 require("ori.disable")
 require("ori.options")
 require("ori.keymaps")
-require("ori.commands")
+require("ori.cmds")
+require("ori.colors")
 

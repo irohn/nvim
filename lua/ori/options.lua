@@ -1,10 +1,10 @@
 local opt = vim.opt                                                                               
 
+opt.autoindent      = true          -- auto indent
 opt.clipboard       = "unnamedplus" -- sync with system clipboard                                       
 opt.colorcolumn     = "80"          -- disable color column
 opt.cursorline      = true          -- highlight line cursor is on                                               
 opt.expandtab       = true          -- use spaces instead of tabs                                                
-opt.fillchars       = { eob = " " } -- remove the "~" char from end of buffer
 opt.ignorecase      = true          -- ignore case (usefull for search "/")                                      
 opt.inccommand      = "split"       -- preview incremental substitute                                         
 opt.laststatus      = 3             -- global statusline                                                            
