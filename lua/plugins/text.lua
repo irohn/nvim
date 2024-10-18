@@ -1,7 +1,5 @@
 return {
 
-	"tpope/vim-sleuth",
-
 	{
 		"echasnovski/mini.align",
 		version = "*",

@@ -7,17 +7,17 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 vim.keymap.set("n", "<leader>fb", function()
-  builtin.buffers({
-    sort_mru = true,
-    initial_mode = "normal",
-  })
+	builtin.buffers({
+		sort_mru = true,
+		initial_mode = "normal",
+	})
 end, {})
 
 vim.keymap.set("n", "<leader>/", function()
-  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    winblend = 4,
-    previewer = false,
-  }))
+	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		winblend = 4,
+		previewer = false,
+	}))
 end, { desc = "[/] Fuzzily find in current buffer" })
 
 vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Git Status" })
