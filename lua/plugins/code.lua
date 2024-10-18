@@ -48,4 +48,11 @@ return {
 		end,
 	},
 
+	{
+		"David-Kunz/gen.nvim",
+		config = function()
+			require("gen").setup({ model = "deepseek-coder-v2" })
+		end,
+	},
+
 }
