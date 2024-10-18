@@ -14,9 +14,6 @@ opt.splitright = true
 -- Keep signcolumn on by default
 opt.signcolumn = "yes"
 
--- Sync clipboard with OS
-opt.clipboard = "unnamedplus"
-
 -- Remove end of buffer `~` symbols
 opt.fillchars = { eob = " " }
 
