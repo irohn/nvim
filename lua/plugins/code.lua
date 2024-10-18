@@ -1,9 +1,8 @@
 return {
 
 	{
-		"junnplus/lsp-setup.nvim",
+		"neovim/nvim-lspconfig",
 		dependencies = {
-			"neovim/nvim-lspconfig",
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		},

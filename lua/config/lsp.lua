@@ -1,7 +1,8 @@
-local lsp_servers = {
-	lua_ls = {},
-}
+require("mason").setup()
+require("mason-lspconfig").setup()
 
-require("lsp-setup").setup({
-	servers = lsp_servers
-})
+require("mason-lspconfig").setup_handlers {
+	function(server_name)
+		require("lspconfig")[server_name].setup {}
+	end,
+}
