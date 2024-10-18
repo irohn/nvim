@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"David-Kunz/gen.nvim",
 		},
 		config = function()
 			require("config.lsp")
@@ -45,13 +46,6 @@ return {
 		},
 		config = function()
 			require("config.cmp")
-		end,
-	},
-
-	{
-		"David-Kunz/gen.nvim",
-		config = function()
-			require("gen").setup({ model = "deepseek-coder-v2" })
 		end,
 	},
 

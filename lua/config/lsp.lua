@@ -10,3 +10,5 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 })
+
+require("gen").setup({ model = "deepseek-coder-v2" })
