@@ -16,3 +16,5 @@ configs.setup({
 		},
 	},
 })
+
+require('nvim-ts-autotag').setup()
