@@ -9,6 +9,10 @@ options = {
   smartcase = true,
   ignorecase = true,
 
+  -- split options
+  splitbelow = true,
+  splitright = true,
+
   -- change tabs into spaces on save
   expandtab = true,
 

@@ -24,4 +24,7 @@ map({"n", "v"}, "<leader>p", "\"*p")
 map("n", "<s-h>", "<cmd>bprev<cr>")
 map("n", "<s-l>", "<cmd>bnext<cr>")
 
+-- open file explorer
+map("n", "-", "<cmd>Explore<cr>")
+
 -- vim: ts=2 sts=2 sw=2 et
