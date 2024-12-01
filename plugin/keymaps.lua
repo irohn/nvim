@@ -3,10 +3,22 @@ local map = function(mode, lhs, rhs, opts)
     noremap = true,
     silent = true,
   }
+
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  vim.keymap.set(mode, lhs, rhs, options)
+
+  local function set_keymap(mode, l, r, options)
+    vim.keymap.set(mode, l, r, options)
+  end
+
+  if type(lhs) == "table" then
+    for _, l in ipairs(lhs) do
+      set_keymap(mode, l, rhs, options)
+    end
+  else
+    set_keymap(mode, lhs, rhs, options)
+  end
 end
 
 -- clear hightlights
@@ -17,8 +29,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- copy/paste to/from clipboard
-map({"n","v"}, "<leader>y", "\"*y")
-map({"n", "v"}, "<leader>p", "\"*p")
+map({"n","v"}, {"<s-y>", "<leader>y"}, "\"*y")
+map({"n","v"}, {"<s-p>", "<leader>p"}, "\"*p")
 
 -- move between buffers
 map("n", "<s-h>", "<cmd>bprev<cr>")
