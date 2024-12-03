@@ -2,8 +2,8 @@
   description = "Neovim flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "nix-community/home-manager"; 
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager"; 
     # You can add other inputs here if required (like plugins or dependencies).
   };
 
