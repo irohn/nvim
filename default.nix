@@ -17,7 +17,6 @@
       };
     };
   };
-
   programs = {
     neovim = {
       package = pkgs.neovim-unwrapped;

@@ -7,9 +7,9 @@
     # You can add other inputs here if required (like plugins or dependencies).
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
-    homeManagerModules.default = import ./default.nix;
-    # For backwards compatibility
-    homeManagerModule = self.homeManagerModules.default;
+  outputs = { ... }: {
+    homeModules = {
+      neovim = ./default.nix;
+    };
   };
 }
