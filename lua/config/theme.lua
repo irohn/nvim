@@ -71,7 +71,6 @@ M.setup = function(opts)
   end
 end
 
-M.setup()
 return M
 
 -- vim: ts=2 sts=2 sw=2 et

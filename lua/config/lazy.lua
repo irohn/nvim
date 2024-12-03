@@ -16,7 +16,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup("plugins", {
+require("lazy").setup({ spec = {
+  { import = "plugins/core" },
+  { import = "plugins/extra" },
+}}, {
   ui = { border = 'rounded' },
   -- Don't bother me when tweaking plugins.
   change_detection = { notify = false },
