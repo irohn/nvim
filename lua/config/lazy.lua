@@ -16,18 +16,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "default" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true, notify = false },
-  -- disable file change detection notifications
+require("lazy").setup("plugins", {
+  ui = { border = 'rounded' },
+  -- Don't bother me when tweaking plugins.
   change_detection = { notify = false },
+  -- None of my plugins use luarocks so disable this.
+  rocks = { enabled = false },
+  performance = {
+    rtp = {
+      -- Stuff I don't use.
+      disabled_plugins = {
+        'gzip',
+        'netrwPlugin',
+        'rplugin',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et

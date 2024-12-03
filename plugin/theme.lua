@@ -33,7 +33,7 @@ local function get_colorschemes()
   return vim.fn.getcompletion("", "color")
 end
 
-local function preview_colorscheme(colorscheme_name)
+local function apply_colorscheme(colorscheme_name)
   vim.cmd.colorscheme(colorscheme_name)
 end
 
@@ -48,10 +48,10 @@ local function pick_colorscheme(opts)
         return item
       end,
     },
-    function(choice)
-      if choice then
-        preview_colorscheme(choice)
-        save_colorscheme(choice)
+    function(selection)
+      if selection then
+        apply_colorscheme(selection)
+        save_colorscheme(selection)
       end
     end
   )

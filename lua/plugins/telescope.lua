@@ -6,14 +6,7 @@ return {
     "nvim-telescope/telescope-ui-select.nvim"
   },
   config = function()
-    require("telescope").setup({
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown()
-        },
-      },
-    })
-    require("telescope").load_extension("ui-select")
+    require("telescope").setup()
     local builtin = require("telescope.builtin")
     local utils = require("telescope.utils")
 
@@ -40,7 +33,9 @@ return {
     vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git Commits" })
     vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Git Branches" })
 
-    vim.keymap.set("n", "<leader>j", builtin.jumplist, { desc = "Jumplist" })
+    vim.keymap.set("n", "<leader>j", function()
+      builtin.jumplist({ initial_mode = "normal" })
+    end, { desc = "Jumplist" })
   end,
 }
 

@@ -24,7 +24,7 @@ end
 -- clear hightlights
 map("n", "<esc>", "<cmd>nohlsearch<cr><esc>")
 
--- single click dents
+-- indent while remaining in visual mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -38,5 +38,11 @@ map("n", "<s-l>", "<cmd>bnext<cr>")
 
 -- open file explorer
 map("n", "-", "<cmd>Explore<cr>")
+
+-- keeping the cursor centered
+map("n", "<c-d>", "<c-d>zz")
+map("n", "<c-u>", "<c-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -4,7 +4,13 @@ return {
   ---@type oil.SetupOpts
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   config = function()
-    require("oil").setup()
+    require("oil").setup({
+      win_options = {
+        signcolumn = "yes:3",
+        number = false,
+        relativenumber = false,
+      },
+    })
 
     local function cc(cmd, callback, opts)
       local options = { nargs = "?", complete = "dir" }
@@ -14,8 +20,8 @@ return {
       vim.api.nvim_create_user_command(cmd, callback, options)
     end
 
-    cc("Explore", function() vim.cmd("Oil --float") end)
-    cc("Ex", function() vim.cmd("Oil --float") end)
+    cc("Explore", function() vim.cmd("Oil") end)
+    cc("Ex", function() vim.cmd("Oil") end)
     cc("Sexplore", function() vim.cmd("split | Oil") end)
     cc("Vexplore", function() vim.cmd("vsplit | Oil") end)
   end,
