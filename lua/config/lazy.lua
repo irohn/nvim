@@ -15,10 +15,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- you can enable / disable extra plugins with ExtraPluginsEnable and ExtraPluginsDisable user commands
+-- disabled by default
+vim.g.extra_plugins = require("config.utils").extra()
+
 -- Setup lazy.nvim
 require("lazy").setup({ spec = {
   { import = "plugins/core" },
-  { import = "plugins/extra" },
+  vim.g.extra_plugins and { import = "plugins/extra" } or nil,
 }}, {
   ui = { border = 'rounded' },
   -- Don't bother me when tweaking plugins.
