@@ -8,8 +8,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- copy/paste to/from clipboard
-map({"n","v"}, {"<s-y>", "<leader>y"}, "\"*y")
-map({"n","v"}, {"<s-p>", "<leader>p"}, "\"*p")
+map({"n","v"}, "<s-y>", "\"*y")
+map({"n","v"}, "<s-p>", "\"*p")
 
 -- move between buffers
 map("n", "<s-h>", "<cmd>bprev<cr>")
@@ -23,5 +23,7 @@ map("n", "<c-d>", "<c-d>zz")
 map("n", "<c-u>", "<c-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+
+map("n", "<leader>m", "<cmd>messages<cr>")
 
 -- vim: ts=2 sts=2 sw=2 et

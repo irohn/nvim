@@ -198,3 +198,5 @@ tags
 .direnv
 .envrc
 
+### Neovim ###
+layz-lock.json
